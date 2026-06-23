@@ -55,5 +55,3 @@ logs/
 htmlcov/
 .tox/
 
-# Render
-render.yaml
