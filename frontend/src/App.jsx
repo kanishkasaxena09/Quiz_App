@@ -180,7 +180,7 @@ function App() {
       if (inputMode === 'content' && uploadedContent.trim()) {
         payload.content = uploadedContent
       }
-      const res = await axios.post(`${API_URL}quiz/start`, payload)
+      const res = await axios.post(`${API_URL}api/quiz/start`, payload)
       const data = res.data.data
       setSessionId(data.session_id)
       setQuestions(data.questions || [])
