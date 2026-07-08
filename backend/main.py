@@ -19,7 +19,10 @@ app = FastAPI(title="QuizMaster API", version="1.0")
 # CORS for React frontend
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["https://quiz-app-caw4.onrender.com"],
+    allow_origins=[
+        "https://quiz-app-jb8z.vercel.app",
+        "http://localhost:5173",   # local development ke liye
+    ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
