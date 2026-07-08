@@ -180,7 +180,7 @@ function App() {
       if (inputMode === 'content' && uploadedContent.trim()) {
         payload.content = uploadedContent
       }
-      const res = await axios.post(`${API_URL}/api/quiz/start`, payload)
+      const res = await axios.post(`${API_URL}api/quiz/start`, payload)
       const data = res.data.data
       setSessionId(data.session_id)
       setQuestions(data.questions || [])
@@ -200,7 +200,7 @@ function App() {
     if (!sessionId) return
     setLoading(true)
     try {
-      const res = await axios.post(`${API_URL}/api/quiz/answer`, {
+      const res = await axios.post(`${API_URL}api/quiz/answer`, {
         session_id: sessionId,
         answer
       })
@@ -256,7 +256,7 @@ function App() {
     if (!sessionId) return
     setLoading(true)
     try {
-      const res = await axios.post(`${API_URL}/api/quiz/next`, {
+      const res = await axios.post(`${API_URL}api/quiz/next`, {
         session_id: sessionId,
         answer: ''
       })
