@@ -1,18 +1,19 @@
 services:
-  # Backend API
   - type: web
     name: quizmaster-api
     runtime: python
+    rootDir: backend
     plan: free
+
     buildCommand: pip install -r requirements.txt
     startCommand: uvicorn main:app --host 0.0.0.0 --port $PORT
+
     envVars:
       - key: PYTHON_VERSION
         value: 3.11.0
       - key: GROQ_API_KEY
-        sync: false  # Set manually in dashboard
+        sync: false
       - key: FRONTEND_URL
-        sync: false  # Set after frontend deploy
-    healthCheckPath: /api/health
+        sync: false
 
-# No database needed for free tier (using in-memory storage)
+    healthCheckPath: /api/health
