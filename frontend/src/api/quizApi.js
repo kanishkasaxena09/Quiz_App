@@ -10,17 +10,17 @@ const api = axios.create({
 })
 
 export const quizApi = {
-  startQuiz: (topic, difficulty, numQuestions) => 
-    api.post('/quiz/start', { topic, difficulty, num_questions: numQuestions }),
-  
-  submitAnswer: (sessionId, answer) => 
-    api.post('/quiz/answer', { session_id: sessionId, answer }),
-  
-  nextQuestion: (sessionId) => 
-    api.post('/quiz/next', { session_id: sessionId, answer: '' }),
-  
-  healthCheck: () => 
-    api.get('/health')
+  startQuiz: (topic, difficulty, numQuestions) =>
+    api.post('/api/quiz/start', { topic, difficulty, num_questions: numQuestions }),
+
+  submitAnswer: (sessionId, answer) =>
+    api.post('/api/quiz/answer', { session_id: sessionId, answer }),
+
+  nextQuestion: (sessionId) =>
+    api.post('/api/quiz/next', { session_id: sessionId, answer: '' }),
+
+  healthCheck: () =>
+    api.get('/api/health')
 }
 
 export default quizApi
