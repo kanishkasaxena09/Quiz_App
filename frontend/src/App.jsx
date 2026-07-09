@@ -127,7 +127,7 @@ function App() {
     try {
       const formData = new FormData()
       formData.append('file', file)
-      const res = await fetch(`${API_URL}/api/quiz/upload`, {
+      const res = await fetch(`${API_URL}api/quiz/upload`, {
         method: 'POST',
         body: formData
       })
